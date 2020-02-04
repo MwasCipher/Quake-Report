@@ -1,6 +1,7 @@
 package com.example.quakereport;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,14 @@ public class QuakeAdapter extends ArrayAdapter<Quake> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
+        View listItemView = convertView;
+        if (listItemView == null){
+            listItemView = LayoutInflater.from(getContext())
+                    .inflate(R.layout.quake_item, parent, false);
+        }
+
+        Quake currentQuake = getItem(position);
 
 
 
