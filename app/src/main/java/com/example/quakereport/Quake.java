@@ -5,6 +5,7 @@ public class Quake {
     private String mMagnitude, mLocation, mDate;
 
     public Quake() {
+
     }
 
     public Quake(String mMagnitude, String mLocation, String mDate) {

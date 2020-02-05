@@ -5,17 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuakeAdapter extends ArrayAdapter<Quake> {
 
 
-    public QuakeAdapter(@NonNull Context context, int resource, @NonNull List<Quake> quakes) {
-        super(context, resource, quakes);
+    public QuakeAdapter(@NonNull Context context, @NonNull ArrayList<Quake> quakes) {
+        super(context, 0, quakes);
     }
 
     @NonNull
@@ -30,8 +32,17 @@ public class QuakeAdapter extends ArrayAdapter<Quake> {
 
         Quake currentQuake = getItem(position);
 
+        TextView magnitudeView = listItemView.findViewById(R.id.quake_magnitude_text_view);
+        magnitudeView.setText(currentQuake.getmMagnitude());
+
+        TextView locationView = listItemView.findViewById(R.id.quake_location_text_view);
+        locationView.setText(currentQuake.getmLocation());
+
+        TextView dateView = listItemView.findViewById(R.id.quake_date_text_view);
+        dateView.setText(currentQuake.getmDate());
 
 
-        return super.getView(position, convertView, parent);
+
+        return listItemView;
     }
 }
