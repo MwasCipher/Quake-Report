@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:gravity="center"
@@ -9,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="15sp"
         android:layout_margin="20dp"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
@@ -19,20 +20,27 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="15sp"
         android:layout_margin="10dp"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:id="@+id/quake_location_text_view"/>
 
+
     <TextView
+        android:id="@+id/quake_date_text_view"
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:layout_margin="10dp"
-        android:textAllCaps="true"
-        android:textColor="@android:color/black"
-        android:id="@+id/quake_date_text_view"/>
+        android:layout_weight="1"
+        android:textSize="15sp"
+        tools:text="Mar 6, 2010" />
+
+    <TextView
+        android:id="@+id/quake_time_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        tools:text="3:00 PM" />
 
 </LinearLayout>

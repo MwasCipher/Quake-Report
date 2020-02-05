@@ -45,13 +45,8 @@ public class QueryUtils {
                 String location = properties.getString("place");
                 Long time = properties.getLong("time");
 
-                Date normalDate = new Date(time);
 
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY MM DD");
-
-                String simplifiedDate = simpleDateFormat.format(normalDate);
-
-                Quake quake = new Quake(magnitude, location, simplifiedDate);
+                Quake quake = new Quake(magnitude, location, time);
                 earthQuakes.add(quake);
 
             }
