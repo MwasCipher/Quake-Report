@@ -6,7 +6,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static android.content.ContentValues.TAG;
 
@@ -41,12 +43,17 @@ public class QueryUtils {
 
                 String magnitude = properties.getString("mag");
                 String location = properties.getString("place");
-                String time = properties.getString("time");
+                Long time = properties.getLong("time");
 
-                Quake quake = new Quake(magnitude, location, time);
+                Date normalDate = new Date(time);
+
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY MM DD");
+
+                String simplifiedDate = simpleDateFormat.format(normalDate);
+
+                Quake quake = new Quake(magnitude, location, simplifiedDate);
                 earthQuakes.add(quake);
 
-                Log.v("New Quake", "EarthQuake Registered!!!!!!!!!!!!!!!!!!!!!!!");
             }
 
 
