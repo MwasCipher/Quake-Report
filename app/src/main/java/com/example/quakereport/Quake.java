@@ -2,13 +2,14 @@ package com.example.quakereport;
 
 public class Quake {
 
-    private String mMagnitude, mLocation, mDate;
+    private String mMagnitude, mLocation;
+    private Long mDate;
 
     public Quake() {
 
     }
 
-    public Quake(String mMagnitude, String mLocation, String mDate) {
+    public Quake(String mMagnitude, String mLocation, Long mDate) {
         this.mMagnitude = mMagnitude;
         this.mLocation = mLocation;
         this.mDate = mDate;
@@ -22,7 +23,7 @@ public class Quake {
         return mLocation;
     }
 
-    public String getmDate() {
+    public Long getmDate() {
         return mDate;
     }
 }
