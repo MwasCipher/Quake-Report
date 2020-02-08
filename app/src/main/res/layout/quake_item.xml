@@ -24,7 +24,14 @@
         android:layout_margin="10dp"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
-        android:id="@+id/quake_location_text_view"/>
+        android:id="@+id/location_offset_text_view"/>
+
+    <TextView
+        android:id="@+id/primary_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="San Francisco, CA" />
 
 
     <TextView
